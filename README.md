@@ -12,14 +12,22 @@ inclusão de refeições e bebidas, fechamento, pagamento e baixa de estoque.
 
 ```
 restaurante/
-├── estruturas/          
-│   ├── no.py            
+├── estruturas/
+│   ├── no.py
 │   ├── lista_encadeada.py
-│   ├── fila.py
-│   └── pilha.py
-├── modelos/             
-├── servicos/            
-└── main.py              
+│   └── fila.py
+├── modelos/
+│   ├── produto.py
+│   ├── item.py
+│   ├── comanda.py
+│   ├── pagamento.py
+│   └── consumo.py
+├── servicos/
+│   ├── estoque.py
+│   ├── restaurante.py
+│   ├── relatorios.py
+│   └── dados.py
+└── main.py             
 ```
 
 ## Decisões de projeto
@@ -28,7 +36,6 @@ restaurante/
 | --- | --- | --- |
 | Lista Encadeada | comandas, itens do pedido, pagamentos | coleções que crescem e encolhem, com remoção em qualquer posição |
 | Fila (FIFO) | lotes de produtos no estoque | produtos são perecíveis: o lote mais antigo sai primeiro |
-| Pilha (LIFO) | desfazer o último item lançado | a última ação é a primeira a ser revertida |
 
 ## Como executar
 
