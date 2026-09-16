@@ -13,28 +13,25 @@ class Fila:
 
     def enfileirar(self, valor):
         novo = No(valor)
-        if self.esta_vazia():
+        if self._inicio is None:
             self._inicio = novo
         else:
             self._fim.proximo = novo
         self._fim = novo
-        self._tamanho += 1
+        self._tamanho = self._tamanho + 1
 
     def desenfileirar(self):
-        if self.esta_vazia():
+        if self._inicio is None:
             return None
-
         removido = self._inicio
         self._inicio = removido.proximo
-
         if self._inicio is None:
             self._fim = None
-
-        self._tamanho -= 1
+        self._tamanho = self._tamanho - 1
         return removido.valor
 
-    def frente(self):
-        if self.esta_vazia():
+    def primeiro(self):
+        if self._inicio is None:
             return None
         return self._inicio.valor
 
@@ -46,6 +43,3 @@ class Fila:
 
     def __len__(self):
         return self._tamanho
-
-    def __repr__(self):
-        return f"Fila({self._tamanho} itens)"
